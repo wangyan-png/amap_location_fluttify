@@ -24,14 +24,22 @@ class com_amap_api_location_CoordinateConverter extends java_lang_Object  {
 
   //region creators
   static Future<com_amap_api_location_CoordinateConverter> create__android_content_Context(android_content_Context var1) async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createcom_amap_api_location_CoordinateConverter__android_content_Context', {"var1": var1});
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_amap_api_location_CoordinateConverter__android_content_Context',
+      {"var1": var1}
+    );
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(__result__);
   }
   
   static Future<List<com_amap_api_location_CoordinateConverter>> create_batch__android_content_Context(List<android_content_Context> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<com_amap_api_location_CoordinateConverter>('ObjectFactory::create_batchcom_amap_api_location_CoordinateConverter__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_amap_api_location_CoordinateConverter__android_content_Context',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(it))
+        .toList();
   }
   
   //endregion
@@ -59,7 +67,7 @@ class com_amap_api_location_CoordinateConverter extends java_lang_Object  {
     // handle native call
   
   
-    return __result__;
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(__result__);
   }
   
   
@@ -76,7 +84,7 @@ class com_amap_api_location_CoordinateConverter extends java_lang_Object  {
     // handle native call
   
   
-    return __result__;
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(__result__);
   }
   
   
@@ -93,7 +101,7 @@ class com_amap_api_location_CoordinateConverter extends java_lang_Object  {
     // handle native call
   
   
-    return __result__;
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_DPoint>(__result__);
   }
   
   
@@ -150,67 +158,57 @@ extension com_amap_api_location_CoordinateConverter_Batch on List<com_amap_api_l
   //region methods
   
   Future<List<com_amap_api_location_CoordinateConverter>> from_batch(List<com_amap_api_location_CoordinateConverter_CoordType> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordinateConverter::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<com_amap_api_location_CoordinateConverter>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(__result__)).cast<com_amap_api_location_CoordinateConverter>().toList();
   }
   
   
   Future<List<com_amap_api_location_CoordinateConverter>> coord_batch(List<com_amap_api_location_DPoint> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordinateConverter::coord_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<com_amap_api_location_CoordinateConverter>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordinateConverter>(__result__)).cast<com_amap_api_location_CoordinateConverter>().toList();
   }
   
   
   Future<List<com_amap_api_location_DPoint>> convert_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordinateConverter::convert_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<com_amap_api_location_DPoint>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => AmapLocationFluttifyAndroidAs<com_amap_api_location_DPoint>(__result__)).cast<com_amap_api_location_DPoint>().toList();
   }
   
   
   static Future<List<bool>> isAMapDataAvailable_batch(List<double> var0, List<double> var2) async {
-    if (var0.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var2.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordinateConverter::isAMapDataAvailable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__]}]);
   
   
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   static Future<List<double>> calculateLineDistance_batch(List<com_amap_api_location_DPoint> var0, List<com_amap_api_location_DPoint> var1) async {
-    if (var0.length != var1.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var1.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordinateConverter::calculateLineDistance_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__]}]);
   
   
-    return (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   //endregion

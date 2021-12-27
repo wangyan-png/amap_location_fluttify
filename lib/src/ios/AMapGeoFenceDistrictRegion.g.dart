@@ -24,14 +24,22 @@ class AMapGeoFenceDistrictRegion extends AMapGeoFenceRegion with NSCopying {
 
   //region creators
   static Future<AMapGeoFenceDistrictRegion> create__({ bool init = true /* ios only */ }) async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createAMapGeoFenceDistrictRegion', {'init': init});
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createAMapGeoFenceDistrictRegion',
+      {'init': init}
+    );
+    return AmapLocationFluttifyIOSAs<AMapGeoFenceDistrictRegion>(__result__);
   }
   
   static Future<List<AMapGeoFenceDistrictRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<AMapGeoFenceDistrictRegion>('ObjectFactory::create_batchAMapGeoFenceDistrictRegion', {'length': length, 'init': init});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchAMapGeoFenceDistrictRegion',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyIOSAs<AMapGeoFenceDistrictRegion>(it))
+        .toList();
   }
   
   //endregion
@@ -39,7 +47,7 @@ class AMapGeoFenceDistrictRegion extends AMapGeoFenceRegion with NSCopying {
   //region getters
   Future<AMapLocationDistrictItem> get_districtItem() async {
     final __result__ = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceDistrictRegion::get_districtItem", {'__this__': this});
-    return __result__;
+    return AmapLocationFluttifyIOSAs<AMapLocationDistrictItem>(__result__);
   }
   
   //endregion
@@ -62,7 +70,7 @@ extension AMapGeoFenceDistrictRegion_Batch on List<AMapGeoFenceDistrictRegion> {
   //region getters
   Future<List<AMapLocationDistrictItem>> get_districtItem_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceDistrictRegion::get_districtItem_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<AMapLocationDistrictItem>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => AmapLocationFluttifyIOSAs<AMapLocationDistrictItem>(__result__))?.cast<AMapLocationDistrictItem>()?.toList();
   }
   
   //endregion

@@ -24,14 +24,22 @@ class AMapLocationRegion extends NSObject with NSCopying {
 
   //region creators
   static Future<AMapLocationRegion> create__({ bool init = true /* ios only */ }) async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createAMapLocationRegion', {'init': init});
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createAMapLocationRegion',
+      {'init': init}
+    );
+    return AmapLocationFluttifyIOSAs<AMapLocationRegion>(__result__);
   }
   
   static Future<List<AMapLocationRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<AMapLocationRegion>('ObjectFactory::create_batchAMapLocationRegion', {'length': length, 'init': init});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchAMapLocationRegion',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyIOSAs<AMapLocationRegion>(it))
+        .toList();
   }
   
   //endregion
@@ -84,7 +92,7 @@ class AMapLocationRegion extends NSObject with NSCopying {
     // handle native call
   
   
-    return __result__;
+    return AmapLocationFluttifyIOSAs<AMapLocationRegion>(__result__);
   }
   
   
@@ -116,17 +124,17 @@ extension AMapLocationRegion_Batch on List<AMapLocationRegion> {
   //region getters
   Future<List<String>> get_identifier_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapLocationRegion::get_identifier_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<bool>> get_notifyOnEntry_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapLocationRegion::get_notifyOnEntry_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_notifyOnExit_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapLocationRegion::get_notifyOnExit_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   //endregion
@@ -149,28 +157,24 @@ extension AMapLocationRegion_Batch on List<AMapLocationRegion> {
   //region methods
   
   Future<List<AMapLocationRegion>> initWithIdentifier_batch(List<String> identifier) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapLocationRegion::initWithIdentifier_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"identifier": identifier[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<AMapLocationRegion>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => AmapLocationFluttifyIOSAs<AMapLocationRegion>(__result__)).cast<AMapLocationRegion>().toList();
   }
   
   
   Future<List<bool>> containsCoordinate_batch(List<CLLocationCoordinate2D> coordinate) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapLocationRegion::containsCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinate": coordinate[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

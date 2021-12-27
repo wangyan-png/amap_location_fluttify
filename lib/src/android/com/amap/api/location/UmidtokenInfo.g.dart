@@ -24,14 +24,22 @@ class com_amap_api_location_UmidtokenInfo extends java_lang_Object  {
 
   //region creators
   static Future<com_amap_api_location_UmidtokenInfo> create__() async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createcom_amap_api_location_UmidtokenInfo__', );
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_amap_api_location_UmidtokenInfo__',
+    
+    );
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_UmidtokenInfo>(__result__);
   }
   
   static Future<List<com_amap_api_location_UmidtokenInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<com_amap_api_location_UmidtokenInfo>('ObjectFactory::create_batchcom_amap_api_location_UmidtokenInfo__', {'length': length});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_amap_api_location_UmidtokenInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_location_UmidtokenInfo>(it))
+        .toList();
   }
   
   //endregion
@@ -116,41 +124,35 @@ extension com_amap_api_location_UmidtokenInfo_Batch on List<com_amap_api_locatio
   //region methods
   
   static Future<List<String>> getUmidtoken_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.UmidtokenInfo::getUmidtoken_batch', );
   
   
-    return (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   static Future<List<void>> setLocAble_batch(List<bool> var0) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.UmidtokenInfo::setLocAble_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<void>> setUmidtoken_batch(List<android_content_Context> var0, List<String> var1) async {
-    if (var0.length != var1.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var1.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.UmidtokenInfo::setUmidtoken_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

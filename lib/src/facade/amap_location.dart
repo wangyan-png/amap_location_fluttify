@@ -526,10 +526,10 @@ mixin _Pro on _Holder {
       );
     } else if (Platform.isIOS) {
       _iosGeoFenceClient ??= await AMapGeoFenceManager.create__();
-      _iosLocationDelegate ??= _IOSLocationDelegate();
+      _iosGeoFenceDelegate ??= _IOSGeoFenceDelegate();
 
       await _iosGeoFenceClient.set_delegate(
-        _iosLocationDelegate
+        _iosGeoFenceDelegate
           .._onGeoFenceStatusChanged = (region, customId, error) async {
             _geoFenceEventController.add(
               GeoFenceEvent(
@@ -592,10 +592,10 @@ mixin _Pro on _Holder {
       );
     } else if (Platform.isIOS) {
       _iosGeoFenceClient ??= await AMapGeoFenceManager.create__();
-      _iosLocationDelegate ??= _IOSLocationDelegate();
+      _iosGeoFenceDelegate ??= _IOSGeoFenceDelegate();
 
       await _iosGeoFenceClient.set_delegate(
-        _iosLocationDelegate
+        _iosGeoFenceDelegate
           .._onGeoFenceStatusChanged = (region, customId, error) async {
             _geoFenceEventController.add(
               GeoFenceEvent(
@@ -658,10 +658,10 @@ mixin _Pro on _Holder {
       );
     } else if (Platform.isIOS) {
       _iosGeoFenceClient ??= await AMapGeoFenceManager.create__();
-      _iosLocationDelegate ??= _IOSLocationDelegate();
+      _iosGeoFenceDelegate ??= _IOSGeoFenceDelegate();
 
       await _iosGeoFenceClient.set_delegate(
-        _iosLocationDelegate
+        _iosGeoFenceDelegate
           .._onGeoFenceStatusChanged = (region, customId, error) async {
             _geoFenceEventController.add(
               GeoFenceEvent(
@@ -715,10 +715,10 @@ mixin _Pro on _Holder {
       );
     } else if (Platform.isIOS) {
       _iosGeoFenceClient ??= await AMapGeoFenceManager.create__();
-      _iosLocationDelegate ??= _IOSLocationDelegate();
+      _iosGeoFenceDelegate ??= _IOSGeoFenceDelegate();
 
       await _iosGeoFenceClient.set_delegate(
-        _iosLocationDelegate
+        _iosGeoFenceDelegate
           .._onGeoFenceStatusChanged = (region, customId, error) async {
             _geoFenceEventController.add(
               GeoFenceEvent(
@@ -773,5 +773,6 @@ class _Holder {
   StreamController<GeoFenceEvent> _geoFenceEventController;
 
   _IOSLocationDelegate _iosLocationDelegate;
+  _IOSGeoFenceDelegate _iosGeoFenceDelegate;
   _AndroidLocationDelegate _androidLocationDelegate;
 }

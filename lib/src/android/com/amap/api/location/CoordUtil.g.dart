@@ -24,14 +24,22 @@ class com_amap_api_location_CoordUtil extends java_lang_Object  {
 
   //region creators
   static Future<com_amap_api_location_CoordUtil> create__() async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createcom_amap_api_location_CoordUtil__', );
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_amap_api_location_CoordUtil__',
+    
+    );
+    return AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordUtil>(__result__);
   }
   
   static Future<List<com_amap_api_location_CoordUtil>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<com_amap_api_location_CoordUtil>('ObjectFactory::create_batchcom_amap_api_location_CoordUtil__', {'length': length});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_amap_api_location_CoordUtil__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_location_CoordUtil>(it))
+        .toList();
   }
   
   //endregion
@@ -116,41 +124,35 @@ extension com_amap_api_location_CoordUtil_Batch on List<com_amap_api_location_Co
   //region methods
   
   static Future<List<int>> convertToGcj_batch(List<Float64List> var0, List<Float64List> var1) async {
-    if (var0.length != var1.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var1.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordUtil::convertToGcj_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__]}]);
   
   
-    return (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   static Future<List<bool>> isLoadedSo_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordUtil::isLoadedSo_batch', );
   
   
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   static Future<List<void>> setLoadedSo_batch(List<bool> var0) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.location.CoordUtil::setLoadedSo_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

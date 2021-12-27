@@ -27,6 +27,9 @@ mixin AMapLocationManagerDelegate on NSObject {
   
 
   @mustCallSuper
+  Future<void> amapLocationManager_doRequireTemporaryFullAccuracyAuth_completion(AMapLocationManager manager, CLLocationManager locationManager, void completion(NSError error)) {}
+  
+  @mustCallSuper
   Future<void> amapLocationManager_doRequireLocationAuth(AMapLocationManager manager, CLLocationManager locationManager) {}
   
   @mustCallSuper
@@ -40,6 +43,9 @@ mixin AMapLocationManagerDelegate on NSObject {
   
   @mustCallSuper
   Future<void> amapLocationManager_didChangeAuthorizationStatus(AMapLocationManager manager, CLAuthorizationStatus status) {}
+  
+  @mustCallSuper
+  Future<void> amapLocationManager_locationManagerDidChangeAuthorization(AMapLocationManager manager, CLLocationManager locationManager) {}
   
   @mustCallSuper
   Future<bool> amapLocationManagerShouldDisplayHeadingCalibration(AMapLocationManager manager) {}

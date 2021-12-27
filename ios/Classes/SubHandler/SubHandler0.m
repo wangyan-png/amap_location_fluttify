@@ -2677,6 +2677,28 @@ extern BOOL enableLog;
             methodResult(__result__);
         },
         
+        @"AMapLocationManager::get_locationAccuracyMode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::get_locationAccuracyMode");
+            }
+        
+            // ref object
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            // invoke native method
+            AMapLocationAccuracyMode result = ref.locationAccuracyMode;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
         @"AMapLocationReGeocode::get_formattedAddress": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -3264,6 +3286,50 @@ extern BOOL enableLog;
         
             // invoke native method
             NSString* result = ref.cityCode;
+        
+            // 返回值: jsonable
+            id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        
+        @"AMapLocationDistrictItem::get_districtCode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationDistrictItem::get_districtCode");
+            }
+        
+            // ref object
+            AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            // invoke native method
+            NSString* result = ref.districtCode;
+        
+            // 返回值: jsonable
+            id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        
+        @"AMapLocationDistrictItem::get_district": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationDistrictItem::get_district");
+            }
+        
+            // ref object
+            AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            // invoke native method
+            NSString* result = ref.district;
         
             // 返回值: jsonable
             id __result__ = result;
@@ -4046,6 +4112,31 @@ extern BOOL enableLog;
             methodResult(resultList);
         },
         
+        @"AMapLocationManager::get_locationAccuracyMode_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    [resultList addObject: [NSNull null]];
+                    continue;
+                }
+        
+                AMapLocationAccuracyMode result = ref.locationAccuracyMode;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
         @"AMapLocationReGeocode::get_formattedAddress_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -4721,6 +4812,56 @@ extern BOOL enableLog;
             methodResult(resultList);
         },
         
+        @"AMapLocationDistrictItem::get_districtCode_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    [resultList addObject: [NSNull null]];
+                    continue;
+                }
+        
+                NSString* result = ref.districtCode;
+        
+                // 返回值: jsonable
+                id __result__ = result;
+        
+                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"AMapLocationDistrictItem::get_district_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    [resultList addObject: [NSNull null]];
+                    continue;
+                }
+        
+                NSString* result = ref.district;
+        
+                // 返回值: jsonable
+                id __result__ = result;
+        
+                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
         @"AMapGeoFenceManager::set_delegate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -5031,132 +5172,6 @@ extern BOOL enableLog;
             }
         
             ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationManager::set_locationTimeout": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationManager::set_locationTimeout");
-            }
-        
-            // args
-            // jsonable arg
-            NSInteger locationTimeout = [args[@"locationTimeout"] longValue];
-        
-            // ref
-            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.locationTimeout = locationTimeout;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationManager::set_reGeocodeTimeout": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationManager::set_reGeocodeTimeout");
-            }
-        
-            // args
-            // jsonable arg
-            NSInteger reGeocodeTimeout = [args[@"reGeocodeTimeout"] longValue];
-        
-            // ref
-            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.reGeocodeTimeout = reGeocodeTimeout;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationManager::set_locatingWithReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationManager::set_locatingWithReGeocode");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL locatingWithReGeocode = [args[@"locatingWithReGeocode"] boolValue];
-        
-            // ref
-            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.locatingWithReGeocode = locatingWithReGeocode;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationManager::set_reGeocodeLanguage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationManager::set_reGeocodeLanguage");
-            }
-        
-            // args
-            // enum arg
-            AMapLocationReGeocodeLanguage reGeocodeLanguage = (AMapLocationReGeocodeLanguage) [args[@"reGeocodeLanguage"] integerValue];
-        
-            // ref
-            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.reGeocodeLanguage = reGeocodeLanguage;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationManager::set_detectRiskOfFakeLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationManager::set_detectRiskOfFakeLocation");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL detectRiskOfFakeLocation = [args[@"detectRiskOfFakeLocation"] boolValue];
-        
-            // ref
-            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.detectRiskOfFakeLocation = detectRiskOfFakeLocation;
-            methodResult(@"success");
-        },
-        
-        @"AMapLocationReGeocode::set_formattedAddress": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"AMapLocationReGeocode::set_formattedAddress");
-            }
-        
-            // args
-            // jsonable arg
-            NSString* formattedAddress = (NSString*) args[@"formattedAddress"];
-        
-            // ref
-            AMapLocationReGeocode* ref = (AMapLocationReGeocode*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.formattedAddress = formattedAddress;
             methodResult(@"success");
         },
         

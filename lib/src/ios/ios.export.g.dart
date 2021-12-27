@@ -20,6 +20,7 @@ export 'AMapLocationCoordinateType.g.dart';
 export 'AMapGeoFenceErrorCode.g.dart';
 export 'AMapLocationDistrictItem.g.dart';
 export 'AMapGeoFenceDistrictRegion.g.dart';
+export 'AMapLocationAccuracyMode.g.dart';
 export 'AMapLocationManager.g.dart';
 export 'AMapLocationPOIItem.g.dart';
 export 'AMapGeoFenceRegionActiveStatus.g.dart';

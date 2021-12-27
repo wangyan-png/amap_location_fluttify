@@ -252,6 +252,29 @@ extern BOOL enableLog;
   
 }
 
+- (void)amapLocationManager : (AMapLocationManager*)manager locationManagerDidChangeAuthorization: (CLLocationManager*)locationManager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+        methodChannelWithName:@"AMapLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+  // print log
+  if (enableLog) {
+    NSLog(@"AMapLocationManagerDelegate::amapLocationManager_locationManagerDidChangeAuthorization");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  AMapLocationManager* argmanager = manager;
+  // ref callback arg
+  CLLocationManager* arglocationManager = locationManager;
+
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::AMapLocationManagerDelegate::amapLocationManager_locationManagerDidChangeAuthorization" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"locationManager": arglocationManager == nil ? [NSNull null] : arglocationManager}];
+  });
+  
+}
+
 - (BOOL)amapLocationManagerShouldDisplayHeadingCalibration : (AMapLocationManager*)manager
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel

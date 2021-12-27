@@ -27,6 +27,9 @@ mixin AMapGeoFenceManagerDelegate on NSObject {
   
 
   @mustCallSuper
+  Future<void> amapLocationManager_doRequireTemporaryFullAccuracyAuth_completion(AMapGeoFenceManager manager, CLLocationManager locationManager, void completion(NSError error)) {}
+  
+  @mustCallSuper
   Future<void> amapGeoFenceManager_doRequireLocationAuth(AMapGeoFenceManager manager, CLLocationManager locationManager) {}
   
   @mustCallSuper

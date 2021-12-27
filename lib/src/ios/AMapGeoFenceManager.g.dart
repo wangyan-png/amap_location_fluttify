@@ -24,14 +24,22 @@ class AMapGeoFenceManager extends NSObject  {
 
   //region creators
   static Future<AMapGeoFenceManager> create__({ bool init = true /* ios only */ }) async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createAMapGeoFenceManager', {'init': init});
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createAMapGeoFenceManager',
+      {'init': init}
+    );
+    return AmapLocationFluttifyIOSAs<AMapGeoFenceManager>(__result__);
   }
   
   static Future<List<AMapGeoFenceManager>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<AMapGeoFenceManager>('ObjectFactory::create_batchAMapGeoFenceManager', {'length': length, 'init': init});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchAMapGeoFenceManager',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyIOSAs<AMapGeoFenceManager>(it))
+        .toList();
   }
   
   //endregion
@@ -75,7 +83,7 @@ class AMapGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.amapGeoFenceManager_doRequireLocationAuth(args['manager'], args['locationManager']);
+              delegate?.amapGeoFenceManager_doRequireLocationAuth(AmapLocationFluttifyIOSAs(args['manager']), AmapLocationFluttifyIOSAs(args['locationManager']));
               break;
             case 'Callback::AMapGeoFenceManagerDelegate::amapGeoFenceManager_didAddRegionForMonitoringFinished_customID_error':
               // print log
@@ -84,7 +92,7 @@ class AMapGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.amapGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(args['manager'], (args['regions'] as List).cast<AMapGeoFenceRegion>(), args['customID'], args['error']);
+              delegate?.amapGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(AmapLocationFluttifyIOSAs(args['manager']), (args['regions'] as List)?.map((it) => AmapLocationFluttifyIOSAs<AMapGeoFenceRegion>(it))?.toList(), args['customID'], AmapLocationFluttifyIOSAs(args['error']));
               break;
             case 'Callback::AMapGeoFenceManagerDelegate::amapGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error':
               // print log
@@ -93,7 +101,7 @@ class AMapGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.amapGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(args['manager'], args['region'], args['customID'], args['error']);
+              delegate?.amapGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(AmapLocationFluttifyIOSAs(args['manager']), AmapLocationFluttifyIOSAs(args['region']), args['customID'], AmapLocationFluttifyIOSAs(args['error']));
               break;
             default:
               break;
@@ -416,22 +424,22 @@ extension AMapGeoFenceManager_Batch on List<AMapGeoFenceManager> {
   //region getters
   Future<List<AMapGeoFenceActiveAction>> get_activeAction_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceManager::get_activeAction_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<AMapGeoFenceActiveAction>().map((__result__) => (__result__ as int).toAMapGeoFenceActiveAction()).toList();
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toAMapGeoFenceActiveAction())?.cast<AMapGeoFenceActiveAction>()?.toList();
   }
   
   Future<List<bool>> get_pausesLocationUpdatesAutomatically_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceManager::get_pausesLocationUpdatesAutomatically_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_allowsBackgroundLocationUpdates_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceManager::get_allowsBackgroundLocationUpdates_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_detectRiskOfFakeLocation_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceManager::get_detectRiskOfFakeLocation_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   //endregion
@@ -466,210 +474,178 @@ extension AMapGeoFenceManager_Batch on List<AMapGeoFenceManager> {
   //region methods
   
   Future<List<void>> addCircleRegionForMonitoringWithCenter_radius_customID_batch(List<CLLocationCoordinate2D> center, List<double> radius, List<String> customID) async {
-    if (center.length != radius.length || radius.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(center.length == radius.length && radius.length == customID.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"center": center[__i__], "radius": radius[__i__], "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addPolygonRegionForMonitoringWithCoordinates_count_customID_batch(List<List<CLLocationCoordinate2D>> coordinates, List<int> count, List<String> customID) async {
-    if (coordinates.length != count.length || count.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinates.length == count.length && count.length == customID.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinates": coordinates[__i__], "count": count[__i__], "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addKeywordPOIRegionForMonitoringWithKeyword_POIType_city_size_customID_batch(List<String> keyword, List<String> type, List<String> city, List<int> size, List<String> customID) async {
-    if (keyword.length != type.length || type.length != city.length || city.length != size.length || size.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(keyword.length == type.length && type.length == city.length && city.length == size.length && size.length == customID.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::addKeywordPOIRegionForMonitoringWithKeyword_POIType_city_size_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"keyword": keyword[__i__], "type": type[__i__], "city": city[__i__], "size": size[__i__], "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addAroundPOIRegionForMonitoringWithLocationPoint_aroundRadius_keyword_POIType_size_customID_batch(List<CLLocationCoordinate2D> locationPoint, List<int> aroundRadius, List<String> keyword, List<String> type, List<int> size, List<String> customID) async {
-    if (locationPoint.length != aroundRadius.length || aroundRadius.length != keyword.length || keyword.length != type.length || type.length != size.length || size.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(locationPoint.length == aroundRadius.length && aroundRadius.length == keyword.length && keyword.length == type.length && type.length == size.length && size.length == customID.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::addAroundPOIRegionForMonitoringWithLocationPoint_aroundRadius_keyword_POIType_size_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"locationPoint": locationPoint[__i__], "aroundRadius": aroundRadius[__i__], "keyword": keyword[__i__], "type": type[__i__], "size": size[__i__], "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addDistrictRegionForMonitoringWithDistrictName_customID_batch(List<String> districtName, List<String> customID) async {
-    if (districtName.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(districtName.length == customID.length);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::addDistrictRegionForMonitoringWithDistrictName_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"districtName": districtName[__i__], "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<AMapGeoFenceRegionActiveStatus>> statusWithGeoFenceRegion_batch(List<AMapGeoFenceRegion> region) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::statusWithGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<AMapGeoFenceRegionActiveStatus>().map((__result__) => (__result__ as int).toAMapGeoFenceRegionActiveStatus()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as int).toAMapGeoFenceRegionActiveStatus()).cast<AMapGeoFenceRegionActiveStatus>().toList();
   }
   
   
   Future<List<List<dynamic>>> geoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::geoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<dynamic>>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List).cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<List<dynamic>>> monitoringGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::monitoringGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<dynamic>>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List).cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<List<dynamic>>> pausedGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::pausedGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<dynamic>>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List).cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<List<dynamic>>> pauseGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::pauseGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<dynamic>>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List).cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<bool>> pauseTheGeoFenceRegion_batch(List<AMapGeoFenceRegion> region) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::pauseTheGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<List<dynamic>>> startGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::startGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<dynamic>>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List).cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<bool>> startTheGeoFenceRegion_batch(List<AMapGeoFenceRegion> region) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::startTheGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<void>> removeTheGeoFenceRegion_batch(List<AMapGeoFenceRegion> region) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::removeTheGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::removeGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeAllGeoFenceRegions_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('AMapGeoFenceManager::removeAllGeoFenceRegions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

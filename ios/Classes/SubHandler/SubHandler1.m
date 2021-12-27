@@ -16,6 +16,153 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler1 {
     __weak __typeof(self)weakSelf = self;
     return @{
+        @"AMapLocationManager::set_locationTimeout": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_locationTimeout");
+            }
+        
+            // args
+            // jsonable arg
+            NSInteger locationTimeout = [args[@"locationTimeout"] longValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.locationTimeout = locationTimeout;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_reGeocodeTimeout": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_reGeocodeTimeout");
+            }
+        
+            // args
+            // jsonable arg
+            NSInteger reGeocodeTimeout = [args[@"reGeocodeTimeout"] longValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.reGeocodeTimeout = reGeocodeTimeout;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_locatingWithReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_locatingWithReGeocode");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL locatingWithReGeocode = [args[@"locatingWithReGeocode"] boolValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.locatingWithReGeocode = locatingWithReGeocode;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_reGeocodeLanguage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_reGeocodeLanguage");
+            }
+        
+            // args
+            // enum arg
+            AMapLocationReGeocodeLanguage reGeocodeLanguage = (AMapLocationReGeocodeLanguage) [args[@"reGeocodeLanguage"] integerValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.reGeocodeLanguage = reGeocodeLanguage;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_detectRiskOfFakeLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_detectRiskOfFakeLocation");
+            }
+        
+            // args
+            // jsonable arg
+            BOOL detectRiskOfFakeLocation = [args[@"detectRiskOfFakeLocation"] boolValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.detectRiskOfFakeLocation = detectRiskOfFakeLocation;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_locationAccuracyMode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationManager::set_locationAccuracyMode");
+            }
+        
+            // args
+            // enum arg
+            AMapLocationAccuracyMode locationAccuracyMode = (AMapLocationAccuracyMode) [args[@"locationAccuracyMode"] integerValue];
+        
+            // ref
+            AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.locationAccuracyMode = locationAccuracyMode;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationReGeocode::set_formattedAddress": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationReGeocode::set_formattedAddress");
+            }
+        
+            // args
+            // jsonable arg
+            NSString* formattedAddress = (NSString*) args[@"formattedAddress"];
+        
+            // ref
+            AMapLocationReGeocode* ref = (AMapLocationReGeocode*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.formattedAddress = formattedAddress;
+            methodResult(@"success");
+        },
+        
         @"AMapLocationReGeocode::set_country": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -562,6 +709,48 @@ extern BOOL enableLog;
             methodResult(@"success");
         },
         
+        @"AMapLocationDistrictItem::set_districtCode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationDistrictItem::set_districtCode");
+            }
+        
+            // args
+            // jsonable arg
+            NSString* districtCode = (NSString*) args[@"districtCode"];
+        
+            // ref
+            AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.districtCode = districtCode;
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationDistrictItem::set_district": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"AMapLocationDistrictItem::set_district");
+            }
+        
+            // args
+            // jsonable arg
+            NSString* district = (NSString*) args[@"district"];
+        
+            // ref
+            AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                return;
+            }
+        
+            ref.district = district;
+            methodResult(@"success");
+        },
+        
         @"AMapGeoFenceManager::set_activeAction_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
@@ -952,6 +1141,28 @@ extern BOOL enableLog;
                 }
         
                 ref.detectRiskOfFakeLocation = detectRiskOfFakeLocation;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationManager::set_locationAccuracyMode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // enum arg
+                AMapLocationAccuracyMode locationAccuracyMode = (AMapLocationAccuracyMode) [args[@"locationAccuracyMode"] integerValue];
+        
+                // ref
+                AMapLocationManager* ref = (AMapLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
+        
+                ref.locationAccuracyMode = locationAccuracyMode;
                 methodResult(@"success");
             }
         
@@ -1546,6 +1757,50 @@ extern BOOL enableLog;
                 }
         
                 ref.cityCode = cityCode;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationDistrictItem::set_districtCode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* districtCode = (NSString*) args[@"districtCode"];
+        
+                // ref
+                AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
+        
+                ref.districtCode = districtCode;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"AMapLocationDistrictItem::set_district_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* district = (NSString*) args[@"district"];
+        
+                // ref
+                AMapLocationDistrictItem* ref = (AMapLocationDistrictItem*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
+        
+                ref.district = district;
                 methodResult(@"success");
             }
         
@@ -2196,70 +2451,6 @@ extern BOOL enableLog;
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
         
-        @"AMapLocationCoordinateConvert::AMapLocationCoordinateConvert": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            if (enableLog) {
-                NSLog(@"fluttify-objc: AMapLocationCoordinateConvert::AMapLocationCoordinateConvert(%@)", args);
-            }
-        
-            // args
-            // struct arg
-            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
-            CLLocationCoordinate2D coordinate;
-            if (coordinateValue != nil && (NSNull*) coordinateValue != [NSNull null]) {
-              [coordinateValue getValue:&coordinate];
-            } else {
-              methodResult([FlutterError errorWithCode:@"参数非法"
-                                               message:@"参数非法"
-                                               details:@"coordinate不能为null"]);
-              return;
-            }
-        
-            // enum arg
-            AMapLocationCoordinateType type = (AMapLocationCoordinateType) [args[@"type"] integerValue];
-        
-            // ref
-        
-        
-            // invoke native method
-            CLLocationCoordinate2D result = AMapLocationCoordinateConvert(coordinate, type);
-        
-            // result
-            // 返回值: 结构体
-            NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-        
-            methodResult(__result__);
-        },
-        @"AMapLocationDataAvailableForCoordinate::AMapLocationDataAvailableForCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            if (enableLog) {
-                NSLog(@"fluttify-objc: AMapLocationDataAvailableForCoordinate::AMapLocationDataAvailableForCoordinate(%@)", args);
-            }
-        
-            // args
-            // struct arg
-            NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
-            CLLocationCoordinate2D coordinate;
-            if (coordinateValue != nil && (NSNull*) coordinateValue != [NSNull null]) {
-              [coordinateValue getValue:&coordinate];
-            } else {
-              methodResult([FlutterError errorWithCode:@"参数非法"
-                                               message:@"参数非法"
-                                               details:@"coordinate不能为null"]);
-              return;
-            }
-        
-        
-            // ref
-        
-        
-            // invoke native method
-            BOOL result = AMapLocationDataAvailableForCoordinate(coordinate);
-        
-            // result
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
     };
 }
 

@@ -13,34 +13,3 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-Future<CLLocationCoordinate2D> AMapLocationCoordinateConvert(CLLocationCoordinate2D coordinate, AMapLocationCoordinateType type) async {
-  // print log
-  if (fluttifyLogEnabled) {
-    debugPrint('fluttify-dart: AMapLocationCoordinateConvert::AMapLocationCoordinateConvert([])');
-  }
-
-  // invoke native method
-  final __result__ = await kAmapLocationFluttifyChannel.invokeMethod('AMapLocationCoordinateConvert::AMapLocationCoordinateConvert', {"coordinate": coordinate, "type": type.toValue()});
-  
-
-  // handle native call
-  
-
-  return __result__;
-}
-
-Future<bool> AMapLocationDataAvailableForCoordinate(CLLocationCoordinate2D coordinate) async {
-  // print log
-  if (fluttifyLogEnabled) {
-    debugPrint('fluttify-dart: AMapLocationDataAvailableForCoordinate::AMapLocationDataAvailableForCoordinate([])');
-  }
-
-  // invoke native method
-  final __result__ = await kAmapLocationFluttifyChannel.invokeMethod('AMapLocationDataAvailableForCoordinate::AMapLocationDataAvailableForCoordinate', {"coordinate": coordinate});
-  
-
-  // handle native call
-  
-
-  return __result__;
-}

@@ -24,14 +24,22 @@ class com_amap_api_fence_DistrictItem extends java_lang_Object with android_os_P
 
   //region creators
   static Future<com_amap_api_fence_DistrictItem> create__() async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createcom_amap_api_fence_DistrictItem__', );
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_amap_api_fence_DistrictItem__',
+    
+    );
+    return AmapLocationFluttifyAndroidAs<com_amap_api_fence_DistrictItem>(__result__);
   }
   
   static Future<List<com_amap_api_fence_DistrictItem>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<com_amap_api_fence_DistrictItem>('ObjectFactory::create_batchcom_amap_api_fence_DistrictItem__', {'length': length});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_amap_api_fence_DistrictItem__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_fence_DistrictItem>(it))
+        .toList();
   }
   
   //endregion
@@ -127,7 +135,7 @@ class com_amap_api_fence_DistrictItem extends java_lang_Object with android_os_P
     // handle native call
   
   
-    return (__result__ as List)?.cast<com_amap_api_location_DPoint>();
+    return (__result__ as List)?.map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_location_DPoint>(it))?.toList();
   }
   
   
@@ -201,106 +209,90 @@ extension com_amap_api_fence_DistrictItem_Batch on List<com_amap_api_fence_Distr
   //region methods
   
   Future<List<String>> getCitycode_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::getCitycode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<void>> setCitycode_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::setCitycode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<String>> getAdcode_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::getAdcode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<void>> setAdcode_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::setAdcode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<List<com_amap_api_location_DPoint>>> getPolyline_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::getPolyline_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<List<com_amap_api_location_DPoint>>().map((__result__) => (__result__ as List)?.cast<com_amap_api_location_DPoint>()).toList();
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.map((it) => AmapLocationFluttifyAndroidAs<com_amap_api_location_DPoint>(it))?.toList()).cast<List<com_amap_api_location_DPoint>>().toList();
   }
   
   
   Future<List<void>> setPolyline_batch(List<List<com_amap_api_location_DPoint>> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::setPolyline_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<String>> getDistrictName_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::getDistrictName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<void>> setDistrictName_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod('com.amap.api.fence.DistrictItem::setDistrictName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    return (resultBatch as List).cast<void>().map((__result__) => __result__).toList();
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

@@ -24,14 +24,22 @@ class AMapGeoFenceCircleRegion extends AMapGeoFenceRegion with NSCopying {
 
   //region creators
   static Future<AMapGeoFenceCircleRegion> create__({ bool init = true /* ios only */ }) async {
-    return kAmapLocationFluttifyChannel.invokeMethod('ObjectFactory::createAMapGeoFenceCircleRegion', {'init': init});
+    final __result__ = await kAmapLocationFluttifyChannel.invokeMethod(
+      'ObjectFactory::createAMapGeoFenceCircleRegion',
+      {'init': init}
+    );
+    return AmapLocationFluttifyIOSAs<AMapGeoFenceCircleRegion>(__result__);
   }
   
   static Future<List<AMapGeoFenceCircleRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    return kAmapLocationFluttifyChannel.invokeListMethod<AMapGeoFenceCircleRegion>('ObjectFactory::create_batchAMapGeoFenceCircleRegion', {'length': length, 'init': init});
+    assert(true);
+    final __result_batch__ = await  kAmapLocationFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchAMapGeoFenceCircleRegion',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => AmapLocationFluttifyIOSAs<AMapGeoFenceCircleRegion>(it))
+        .toList();
   }
   
   //endregion
@@ -39,7 +47,7 @@ class AMapGeoFenceCircleRegion extends AMapGeoFenceRegion with NSCopying {
   //region getters
   Future<CLLocationCoordinate2D> get_center() async {
     final __result__ = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceCircleRegion::get_center", {'__this__': this});
-    return __result__;
+    return AmapLocationFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   Future<double> get_radius() async {
@@ -67,12 +75,12 @@ extension AMapGeoFenceCircleRegion_Batch on List<AMapGeoFenceCircleRegion> {
   //region getters
   Future<List<CLLocationCoordinate2D>> get_center_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceCircleRegion::get_center_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<CLLocationCoordinate2D>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => AmapLocationFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
   Future<List<double>> get_radius_batch() async {
     final resultBatch = await kAmapLocationFluttifyChannel.invokeMethod("AMapGeoFenceCircleRegion::get_radius_batch", [for (final __item__ in this) {'__this__': __item__}]);
-    return (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   //endregion
